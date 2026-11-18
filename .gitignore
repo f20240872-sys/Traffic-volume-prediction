@@ -7,5 +7,6 @@ __pycache__/
 htmlcov/
 build/
 tmp/
+node_modules/
 .DS_Store
 Thumbs.db
