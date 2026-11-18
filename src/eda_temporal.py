@@ -4,7 +4,7 @@ import pandas as pd
 import seaborn as sns
 
 from src.config import FIGURES_DIR, TARGET_COL
-from src.split import load_processed_dataset
+from src.split import chronological_split, load_processed_dataset
 
 sns.set_theme(style="whitegrid", context="talk")
 
@@ -105,7 +105,7 @@ def plot_monthly_seasonality(df: pd.DataFrame) -> None:
     ax.legend(frameon=True)
     plt.tight_layout()
 
-    out = FIGURES_DIR / "03_monthly_seasonality.png"
+    out = FIGURES_DIR / "eda_monthly_seasonality.png"
     fig.savefig(out, dpi=300)
     plt.close(fig)
     print(f"[Saved] {out}")
@@ -134,23 +134,24 @@ def plot_holiday_effect(df: pd.DataFrame) -> None:
     ax.legend(title="Day Type", frameon=True)
     plt.tight_layout()
 
-    out = FIGURES_DIR / "04_holiday_effect.png"
+    out = FIGURES_DIR / "eda_holiday_effect.png"
     fig.savefig(out, dpi=300)
     plt.close(fig)
     print(f"[Saved] {out}")
 
 
 def run_temporal_eda() -> None:
-    """Generate all 4 temporal EDA figures and save to reports/figures/."""
+    """Generate temporal EDA from the training period only."""
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     df = load_processed_dataset()
-    eda_df = add_temporal_columns(df)
+    train_df, _, _ = chronological_split(df)
+    eda_df = add_temporal_columns(train_df)
 
     plot_hourly_weekday_vs_weekend(eda_df)
     plot_dow_hour_heatmap(eda_df)
     plot_monthly_seasonality(eda_df)
     plot_holiday_effect(eda_df)
-    print("\n[Done] All temporal EDA figures saved to reports/figures/.")
+    print("\n[Done] Training-only temporal EDA figures saved to reports/figures/.")
 
 
 if __name__ == "__main__":
