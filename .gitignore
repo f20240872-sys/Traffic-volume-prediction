@@ -8,5 +8,6 @@ htmlcov/
 build/
 tmp/
 node_modules/
+.chart-data-*/
 .DS_Store
 Thumbs.db
