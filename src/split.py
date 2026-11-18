@@ -3,6 +3,7 @@ from typing import Tuple
 import pandas as pd
 
 from src.config import (
+    CLEAN_DATA_PATH,
     DATA_PROCESSED_DIR,
     DATETIME_COL,
     HOURLY_GRID_PATH,
@@ -11,7 +12,7 @@ from src.config import (
     VAL_RATIO,
 )
 
-CLEAN_PARQUET_PATH = DATA_PROCESSED_DIR / "clean_hourly.parquet"
+CLEAN_PARQUET_PATH = CLEAN_DATA_PATH
 
 
 def load_processed_dataset() -> pd.DataFrame:
