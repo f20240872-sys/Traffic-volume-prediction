@@ -1,0 +1,11 @@
+Metric,Value
+Raw rows,48204
+Unique observed hours,40575
+Duplicate timestamp rows collapsed,7629
+Hourly grid rows,52551
+Missing hours added,11976
+Zero Kelvin values replaced,10
+Extreme rain values replaced,1
+Traffic targets imputed,0
+Hours without traffic target,11976
+Hours still missing weather,8472
