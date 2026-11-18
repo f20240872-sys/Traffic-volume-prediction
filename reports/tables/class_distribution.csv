@@ -1,0 +1,7 @@
+Split,Class,Count,Share
+Train,Low,1874,0.3334
+Train,Moderate,1874,0.3334
+Train,High,1873,0.3332
+Validation,Low,1792,0.3143
+Validation,Moderate,1728,0.3031
+Validation,High,2181,0.3826

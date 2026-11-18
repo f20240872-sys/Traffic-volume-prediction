@@ -1,0 +1,6 @@
+Split,Model,Macro_F1,Balanced_Accuracy
+Validation,XGBoost,0.934,0.9343
+Validation,Random Forest,0.9305,0.9306
+Validation,Decision Tree,0.9117,0.9113
+Validation,Logistic Regression,0.9043,0.9047
+Validation,Majority class,0.1594,0.3333

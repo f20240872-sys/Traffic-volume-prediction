@@ -1,0 +1,10 @@
+{
+  "low_to_moderate": 2227.999999999999,
+  "moderate_to_high": 4510.0,
+  "labels": [
+    "Low",
+    "Moderate",
+    "High"
+  ],
+  "source": "training quantiles only"
+}
