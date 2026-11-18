@@ -1,0 +1,6 @@
+Split,Model,MAE,RMSE,R2
+Validation,XGBoost,167.1959,256.7781,0.9833
+Validation,Random Forest,170.88,275.3289,0.9808
+Validation,Decision Tree,213.0569,323.8114,0.9734
+Validation,PyTorch MLP,221.1486,333.5868,0.9718
+Validation,Linear Regression,283.2807,391.4535,0.9611

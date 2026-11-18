@@ -1,0 +1,32 @@
+{
+  "Linear Regression": {},
+  "Decision Tree": {
+    "min_samples_leaf": 10,
+    "max_features": null,
+    "max_depth": 14
+  },
+  "Random Forest": {
+    "n_estimators": 260,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "max_depth": 16
+  },
+  "XGBoost": {
+    "subsample": 0.8,
+    "n_estimators": 250,
+    "max_depth": 7,
+    "learning_rate": 0.06,
+    "colsample_bytree": 0.8
+  },
+  "PyTorch MLP": {
+    "hidden_layers": [
+      128,
+      64
+    ],
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "epochs_run": 120,
+    "best_validation_mae": 221.1486
+  },
+  "selected_model": "XGBoost"
+}
