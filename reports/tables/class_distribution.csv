@@ -5,3 +5,6 @@ Train,High,1873,0.3332
 Validation,Low,1792,0.3143
 Validation,Moderate,1728,0.3031
 Validation,High,2181,0.3826
+Test,Low,1821,0.3259
+Test,Moderate,1745,0.3123
+Test,High,2021,0.3617

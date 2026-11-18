@@ -103,3 +103,38 @@ def train_mlp(
         "best_validation_mae": round(best_mae, 4),
     }
     return predictions, details
+
+
+def fit_predict_mlp_fixed(
+    train: pd.DataFrame,
+    test: pd.DataFrame,
+    features: list[str],
+    target: str,
+    epochs: int,
+    seed: int = 42,
+) -> np.ndarray:
+    """Refit the chosen MLP schedule on train+validation and predict test once."""
+    set_seeds(seed)
+    preprocess = make_preprocessor(features, scale_numeric=True)
+    x_train = preprocess.fit_transform(train[features]).astype("float32")
+    x_test = preprocess.transform(test[features]).astype("float32")
+    y_train = train[target].to_numpy(dtype="float32")
+    loader = DataLoader(
+        TensorDataset(torch.from_numpy(x_train), torch.from_numpy(y_train)),
+        batch_size=256,
+        shuffle=True,
+        generator=torch.Generator().manual_seed(seed),
+    )
+    model = TrafficMLP(x_train.shape[1])
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
+    loss_fn = nn.SmoothL1Loss(beta=100.0)
+    for _ in range(epochs):
+        model.train()
+        for batch_x, batch_y in loader:
+            optimizer.zero_grad()
+            loss = loss_fn(model(batch_x), batch_y)
+            loss.backward()
+            optimizer.step()
+    model.eval()
+    with torch.no_grad():
+        return model(torch.from_numpy(x_test)).numpy().clip(min=0)

@@ -1,0 +1,8 @@
+Split,Model,MAE,RMSE,R2
+Test,XGBoost,158.5715,252.6038,0.9836
+Test,Random Forest (T+L selected),158.579,261.5362,0.9824
+Test,Random Forest,166.3011,274.7585,0.9806
+Test,PyTorch MLP,196.5402,327.1779,0.9725
+Test,Decision Tree,208.3617,345.1904,0.9693
+Test,Linear Regression,285.4213,418.3857,0.955
+Test,Same hour last week,360.3923,703.1917,0.8728
