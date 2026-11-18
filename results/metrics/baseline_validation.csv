@@ -1,0 +1,4 @@
+Split,Model,MAE,RMSE,R2
+Validation,Same hour last week,278.2857,495.9173,0.9376
+Validation,Hour-of-week train mean,286.439,449.7859,0.9487
+Validation,Temporal linear regression,530.0987,710.7774,0.8718

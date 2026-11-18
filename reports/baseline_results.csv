@@ -1,7 +1,0 @@
-Split,Model,Evaluated_Hours,MAE,RMSE,R2
-Validation,1. Same Hour Last Week (lag_168),7788,286.92,514.33,0.9326
-Validation,2. Hour-of-Week Train Mean,7788,272.29,439.77,0.9508
-Validation,3. Linear Regression (Temporal),7788,555.26,766.72,0.8503
-Test,1. Same Hour Last Week (lag_168),7830,355.49,682.68,0.8795
-Test,2. Hour-of-Week Train Mean,7830,284.8,506.1,0.9338
-Test,3. Linear Regression (Temporal),7830,564.79,785.05,0.8407
